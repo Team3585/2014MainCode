@@ -1,7 +1,6 @@
 
 package edu.wpi.first.wpilibj.templates;
 
-
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.DigitalIOButton;
