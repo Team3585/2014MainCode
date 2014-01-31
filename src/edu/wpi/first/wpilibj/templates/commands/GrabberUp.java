@@ -3,17 +3,14 @@
  * and open the template in the editor.
  */
 package edu.wpi.first.wpilibj.templates.commands;
-
-import edu.wpi.first.wpilibj.templates.subsystems.Chassis;
-import edu.wpi.first.wpilibj.RobotDrive;
-import edu.wpi.first.wpilibj.templates.OI;
+import edu.wpi.first.wpilibj.templates.subsystems.BallGrabber;
 /**
  *
  * @author Coach
  */
-public class DriveWithJoystick extends CommandBase {
+public class GrabberUp extends CommandBase {
     
-    public DriveWithJoystick() {
+    public GrabberUp() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }
@@ -24,17 +21,17 @@ public class DriveWithJoystick extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        Chassis.drive.mecanumDrive_Polar(OI.stick.getY(), OI.stick.getX(),OI.stick.getZ());
+        BallGrabber.grabberMotor.set(.25);
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        return BallGrabber.limit1.get();
     }
 
     // Called once after isFinished returns true
     protected void end() {
-        
+        BallGrabber.grabberMotor.set(0);
     }
 
     // Called when another command which requires one or more of the same
