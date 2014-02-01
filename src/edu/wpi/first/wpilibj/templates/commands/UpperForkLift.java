@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.templates.subsystems.ForkLift;
  */
 public class UpperForkLift extends CommandBase {
     
+    public static final float MOTOR_UP_SPEED = .5f;
 
     
     public UpperForkLift() {
@@ -26,7 +27,7 @@ public class UpperForkLift extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-       ForkLift.lowerLimitSwitch.get();
+       OI.forkLift.liftBall(MOTOR_UP_SPEED);
     }
 
     // Make this return true when this Command no longer needs to run execute()

@@ -39,7 +39,7 @@ public class FireAndWait extends CommandBase {
                     OI.forkLift.forkLiftStop();
                     mode = WAIT_MODE;
                 } else {
-                    OI.forkLift.lowerForkLift();
+                    OI.forkLift.lowerForkLift(MOTOR_SPEED_DOWN);
                 }
                     
             
@@ -61,7 +61,7 @@ public class FireAndWait extends CommandBase {
                     
                 }
                 else {
-                    OI.forkLift.liftBall();
+                    OI.forkLift.liftBall(MOTOR_SPEED_UP);
                 }
                 break;
                     

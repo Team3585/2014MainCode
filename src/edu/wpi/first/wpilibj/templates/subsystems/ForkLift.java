@@ -57,14 +57,14 @@ public class ForkLift extends Subsystem {
     {
         forkMotor.set(0);
     }
-    public void liftBall()
+    public void liftBall(float speed)
     {
-        forkMotor.set(FireAndWait.MOTOR_SPEED_UP);
+        forkMotor.set(speed);
     }
 
-    public void lowerForkLift()
+    public void lowerForkLift(float speed)
     {
-        forkMotor.set(FireAndWait.MOTOR_SPEED_DOWN);
+        forkMotor.set(speed);
     }
     
     public boolean atLowerStop()

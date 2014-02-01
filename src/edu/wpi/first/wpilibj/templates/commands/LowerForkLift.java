@@ -12,6 +12,8 @@ import edu.wpi.first.wpilibj.templates.subsystems.ForkLift;
  */
 public class LowerForkLift extends CommandBase {
     
+    public static final float MOTOR_DOWN_SPEED = -.5f;
+    
     public LowerForkLift() {
         super("LowerForkLift");
         // Use requires() here to declare subsystem dependencies
@@ -24,7 +26,7 @@ public class LowerForkLift extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        OI.forkLift.lowerForkLift();
+        OI.forkLift.lowerForkLift(MOTOR_DOWN_SPEED);
     }
 
     // Make this return true when this Command no longer needs to run execute()
