@@ -32,6 +32,7 @@ public class OI {
         }
         
         return driveStick;
+        raiseForkLiftButton.whenPressed(new UpperForkLift());
     }
     
     //// CREATING BUTTONS
