@@ -21,37 +21,41 @@ public class Dumper extends Subsystem {
     public static final int LIMIT_SWITCH_TOP = 7;
     public static final int LIMIT_SWITCH_BOTTOM = 8;
     
-    private DigitalInput topLimitSwitch;
-    private DigitalInput bottomLimitSwitch;
+    public static DigitalInput topLimitSwitch;
+    public static DigitalInput bottomLimitSwitch;
     
-    private Talon pwm;
+    public static Talon dumperMotor;
     
     public Dumper()
     {
-                pwm = new Talon(MOTOR);
+                dumperMotor = new Talon(MOTOR);
                 
                 topLimitSwitch = new DigitalInput(LIMIT_SWITCH_TOP);
                 bottomLimitSwitch = new DigitalInput (LIMIT_SWITCH_BOTTOM);
     }
+    public void DumperStop()
+    {
+        dumperMotor.set(0);
+    }
     
     public void DumperUp()
     {
-        
+        dumperMotor.set(.5);
     }
     
     public void DumperDown()
     {
-        
+        dumperMotor.set(-.5);
     }
     
     public boolean AtUpperStop()
     {
-        
+        return(topLimitSwitch.get());
     }
     
     public boolean AtLowerStop()
     {
-        
+        return(bottomLimitSwitch.get());   
     }
 
     public void initDefaultCommand() {

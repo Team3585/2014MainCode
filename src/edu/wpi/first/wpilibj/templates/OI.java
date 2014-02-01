@@ -3,6 +3,7 @@ package edu.wpi.first.wpilibj.templates;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.templates.subsystems.ForkLift;
+import edu.wpi.first.wpilibj.templates.subsystems.Dumper;
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
@@ -13,7 +14,7 @@ public class OI {
     
     private static Joystick driveStick = null;  
     public static ForkLift forkLift = new ForkLift();
-    
+    public static Dumper dumper = new Dumper();
     public static Joystick getStick() {
         if (driveStick == null) {
             driveStick = new Joystick(JOYSTICK_PORT_1);
