@@ -3,6 +3,7 @@
  * and open the template in the editor.
  */
 package edu.wpi.first.wpilibj.templates.commands;
+
 import edu.wpi.first.wpilibj.templates.OI;
 import edu.wpi.first.wpilibj.templates.subsystems.ForkLift;
 
@@ -10,12 +11,11 @@ import edu.wpi.first.wpilibj.templates.subsystems.ForkLift;
  *
  * @author Developer
  */
-public class LowerForkLift extends CommandBase {
+public class UpperForkLift extends CommandBase {
     
-    public LowerForkLift() {
-        super("LowerForkLift");
+    public UpperForkLift() {
         // Use requires() here to declare subsystem dependencies
-        requires(OI.forkLift);
+        // eg. requires(chassis);
     }
 
     // Called just before this Command runs the first time
@@ -24,12 +24,12 @@ public class LowerForkLift extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        OI.forkLift.lowerForkLift();
+       ForkLift.lowerLimitSwitch.get();
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return(OI.forkLift.atLowerStop());
+        return (OI.forkLift.atUpperStop());
     }
 
     // Called once after isFinished returns true

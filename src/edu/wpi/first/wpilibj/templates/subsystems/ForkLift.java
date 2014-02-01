@@ -7,6 +7,7 @@ package edu.wpi.first.wpilibj.templates.subsystems;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Talon;
+import edu.wpi.first.wpilibj.templates.OI;
 /**
  *
  * @author Developer
@@ -38,15 +39,18 @@ public class ForkLift extends Subsystem {
         ballLimitSwitchOne = new DigitalInput(BALL_HIT_LIMIT_SWITCH_1);
         ballLimitSwitchTwo = new DigitalInput(BALL_HIT_LIMIT_SWITCH_2);
     }
-    
+    public void forkLiftStop()
+    {
+        forkMotor.set(0);
+    }
     public void liftBall()
     {
-    
+        forkMotor.set(0.5);
     }
 
     public void lowerForkLift()
     {
-        
+        forkMotor.set(-0.5);
     }
     
     public boolean atLowerStop()
@@ -56,7 +60,7 @@ public class ForkLift extends Subsystem {
     
     public boolean atUpperStop()
     {
-        return(true);
+        return(upperLimitSwitch.get());
     }
     
     public boolean hitByBall()
