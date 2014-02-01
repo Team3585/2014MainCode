@@ -4,18 +4,18 @@
  */
 package edu.wpi.first.wpilibj.templates.commands;
 
-import edu.wpi.first.wpilibj.templates.subsystems.Chassis;
-import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.templates.OI;
+import edu.wpi.first.wpilibj.templates.subsystems.Chassis;
+
 /**
- *
- * @author Coach
+ * Drives the chassis around with the joystick.
+ * @author Nate "N8" Page
  */
 public class DriveWithJoystick extends CommandBase {
     
     public DriveWithJoystick() {
         // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
+        requires(chassis);
     }
 
     // Called just before this Command runs the first time
@@ -24,7 +24,7 @@ public class DriveWithJoystick extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        Chassis.drive.mecanumDrive_Polar(OI.stick.getY(), OI.stick.getX(),OI.stick.getZ());
+        Chassis.driveWithJoystick(OI.getStick());
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -34,7 +34,6 @@ public class DriveWithJoystick extends CommandBase {
 
     // Called once after isFinished returns true
     protected void end() {
-        
     }
 
     // Called when another command which requires one or more of the same

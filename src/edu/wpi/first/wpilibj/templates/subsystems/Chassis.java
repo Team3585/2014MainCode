@@ -1,34 +1,66 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package edu.wpi.first.wpilibj.templates.subsystems;
 
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.templates.commands.DriveWithJoystick;
+
 /**
- *
- * @author Coach
+ * Defines the Chassis class, which defines the chassis of the robot.
+ * @author Nate "N8" Page
  */
 public class Chassis extends Subsystem {
-   public static final int victorPortFrontLeft = 1;
-   public static final int victorPortBackLeft = 2;
-   public static final int victorPortFrontRight = 3;
-   public static final int victorPortBackRight = 4;
-  
-   public static Victor vic1 = new Victor(victorPortFrontLeft);
-   public static Victor vic2 = new Victor(victorPortBackLeft);
-   public static Victor vic3 = new Victor(victorPortFrontRight);
-   public static Victor vic4 = new Victor(victorPortBackRight);
-   public static RobotDrive drive = new RobotDrive(vic1, vic2, vic3, vic4);
-    // Put methods for controlling this subsystem
-    // here. Call these from Commands.
+    
+    public static final int VICTOR_PORT_1 = 1;
+    public static final int VICTOR_PORT_2 = 2;
+    public static final int VICTOR_PORT_3 = 3;
+    public static final int VICTOR_PORT_4 = 4;
+    public static final int VICTOR_PORT_5 = 1;
+    public static final int VICTOR_PORT_6 = 3;
+    public static final int VICTOR_PORT_7 = 5;
+    public static final int VICTOR_PORT_8 = 7;
+
+    
+    public static final Victor victor1 = new Victor(VICTOR_PORT_1);    
+    public static final Victor victor2 = new Victor(VICTOR_PORT_2);    
+    public static final Victor victor3 = new Victor(VICTOR_PORT_3);    
+    public static final Victor victor4 = new Victor(VICTOR_PORT_4);
+ //   public static Victor victor5 = new Victor(VICTOR_PORT_5);    
+ //   public static Victor victor6 = new Victor(VICTOR_PORT_6);    
+ //   public static Victor victor7 = new Victor(VICTOR_PORT_7);    
+ //   public static Victor victor8 = new Victor(VICTOR_PORT_8);
+    private static RobotDrive drive = new RobotDrive(victor1, victor2, victor3, victor4);
+   // public static RobotDrive drive2 = new RobotDrive(victor1, victor2, victor3, victor4);
+
+    
+    public static RobotDrive getDrive() {
+        if (drive == null)
+        {
+            drive = new RobotDrive(victor1, victor2, victor3, victor4);
+        }
+        return drive;
+    }
+    
 
     public void initDefaultCommand() {
-        setDefaultCommand(new DriveWithJoystick());
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
+         setDefaultCommand(new DriveWithJoystick());
+                 
+    }
+    
+    public static void driveWithJoystick(Joystick driveStick) {
+        getDrive().mecanumDrive_Polar(
+                driveStick.getX(),
+                driveStick.getY(),
+                driveStick.getZ()
+                );
+        drive.mecanumDrive_Polar(
+                driveStick.getX(),
+                driveStick.getY(),
+                driveStick.getZ()
+                );
+                
     }
 }
