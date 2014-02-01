@@ -29,7 +29,7 @@ public class GoalieUp extends CommandBase {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return (OI.goalie.atGoalieUpStop());
+        return (OI.goalie.atGoalieUpStop() || !OI.raiseGoalieButton.get());
     }
 
     // Called once after isFinished returns true

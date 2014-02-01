@@ -29,7 +29,7 @@ public class LowerForkLift extends CommandBase {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return(OI.forkLift.atLowerStop());
+        return(OI.forkLift.atLowerStop() || !OI.lowerForkLiftButton.get());
     }
 
     // Called once after isFinished returns true
