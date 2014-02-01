@@ -2,6 +2,7 @@
 package edu.wpi.first.wpilibj.templates;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.templates.subsystems.ForkLift;
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
@@ -11,6 +12,7 @@ public class OI {
     public static final int JOYSTICK_PORT_1 = 2;
     
     private static Joystick driveStick = null;  
+    public static ForkLift forkLift = new ForkLift();
     
     public static Joystick getStick() {
         if (driveStick == null) {
