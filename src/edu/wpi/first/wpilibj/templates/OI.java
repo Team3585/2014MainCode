@@ -17,12 +17,12 @@ public class OI {
     
     private static Joystick driveStick = null;
     public static Joystick stick2 = new Joystick(2);
-    public static JoystickButton raiseForklift = new JoystickButton(stick2,1);
-    public static JoystickButton lowerForkLift = new JoystickButton(stick2,2);
-    public static JoystickButton raiseDumper = new JoystickButton(stick2,3);
-    public static JoystickButton lowerDumper = new JoystickButton(stick2,4);
-    public static JoystickButton raiseGoalie = new JoystickButton(stick2,5);
-    public static JoystickButton lowerGoalie = new JoystickButton(stick2,6);
+    public static JoystickButton raiseForkLiftButton = new JoystickButton(stick2,1);
+    public static JoystickButton lowerForkLiftButton = new JoystickButton(stick2,2);
+    public static JoystickButton raiseDumperButton = new JoystickButton(stick2,3);
+    public static JoystickButton lowerDumperButton = new JoystickButton(stick2,4);
+    public static JoystickButton raiseGoalieButton = new JoystickButton(stick2,5);
+    public static JoystickButton lowerGoalieButton = new JoystickButton(stick2,6);
     public static Goalie goalie = new Goalie();
     public static ForkLift forkLift = new ForkLift();
     public static Dumper dumper = new Dumper();
