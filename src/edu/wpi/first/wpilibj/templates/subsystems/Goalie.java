@@ -7,16 +7,7 @@ package edu.wpi.first.wpilibj.templates.subsystems;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import static edu.wpi.first.wpilibj.templates.subsystems.ForkLift.BALL_HIT_LIMIT_SWITCH_1;
-import static edu.wpi.first.wpilibj.templates.subsystems.ForkLift.BALL_HIT_LIMIT_SWITCH_2;
-import static edu.wpi.first.wpilibj.templates.subsystems.ForkLift.LOWER_LIMIT_SWITCH;
-import static edu.wpi.first.wpilibj.templates.subsystems.ForkLift.MOTOR;
-import static edu.wpi.first.wpilibj.templates.subsystems.ForkLift.UPPER_LIMIT_SWITCH;
-import static edu.wpi.first.wpilibj.templates.subsystems.ForkLift.ballLimitSwitchOne;
-import static edu.wpi.first.wpilibj.templates.subsystems.ForkLift.ballLimitSwitchTwo;
-import static edu.wpi.first.wpilibj.templates.subsystems.ForkLift.forkMotor;
-import static edu.wpi.first.wpilibj.templates.subsystems.ForkLift.lowerLimitSwitch;
-import static edu.wpi.first.wpilibj.templates.subsystems.ForkLift.upperLimitSwitch;
+import edu.wpi.first.wpilibj.templates.subsystems.ForkLift;
 
 /**
  *
@@ -39,8 +30,6 @@ public class Goalie extends Subsystem {
         
         goalUpLimitSwitch = new DigitalInput(UPPER_LIMIT_SWITCH);
         goalDownLimitSwitch = new DigitalInput(LOWER_LIMIT_SWITCH);
-        ballLimitSwitchOne = new DigitalInput(BALL_HIT_LIMIT_SWITCH_1);
-        ballLimitSwitchTwo = new DigitalInput(BALL_HIT_LIMIT_SWITCH_2);
         
         
     
