@@ -70,6 +70,10 @@ public class FireAndWait extends CommandBase {
     }
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
+        if(mode==NULL_MODE)
+            return true;
+        if(OI.forkLift.getMode()==ForkLift.MANUAL)
+            return true;
         return false;
     }
 
