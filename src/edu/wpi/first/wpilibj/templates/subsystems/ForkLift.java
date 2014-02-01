@@ -51,17 +51,17 @@ public class ForkLift extends Subsystem {
     
     public boolean atLowerStop()
     {
-        
+        return(lowerLimitSwitch.get());
     }
     
     public boolean atUpperStop()
     {
-        
+        return(true);
     }
     
     public boolean hitByBall()
     {
-        
+        return(true);
     }
     
     public void initDefaultCommand() {
