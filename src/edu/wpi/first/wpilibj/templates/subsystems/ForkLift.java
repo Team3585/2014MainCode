@@ -2,13 +2,10 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package edu.wpi.first.wpilibj.templates.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
-
 import edu.wpi.first.wpilibj.DigitalInput;
-
 import edu.wpi.first.wpilibj.Talon;
 /**
  *
@@ -18,23 +15,23 @@ public class ForkLift extends Subsystem {
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
     
-    private static final float MOTOR_SPEED = 1.0f;
+    public static final float MOTOR_SPEED = 1.0f;
     public static final int MOTOR = 5;
     public static final int LOWER_LIMIT_SWITCH = 1;
     public static final int UPPER_LIMIT_SWITCH = 2;
     public static final int BALL_HIT_LIMIT_SWITCH_1 = 3;
     public static final int BALL_HIT_LIMIT_SWITCH_2 = 4;
     
-    private DigitalInput upperLimitSwitch;
-    private DigitalInput lowerLimitSwitch;
-    private DigitalInput ballLimitSwitchOne;
-    private DigitalInput ballLimitSwitchTwo;
+    public static DigitalInput upperLimitSwitch;
+    public static  DigitalInput lowerLimitSwitch;
+    public static DigitalInput ballLimitSwitchOne;
+    public static DigitalInput ballLimitSwitchTwo;
     
-    private Talon pwm;
+    public static Talon forkMotor;
     
     public ForkLift()
     {
-        pwm = new Talon(MOTOR); 
+        forkMotor = new Talon(MOTOR); 
         
         upperLimitSwitch = new DigitalInput(UPPER_LIMIT_SWITCH);
         lowerLimitSwitch = new DigitalInput(LOWER_LIMIT_SWITCH);
