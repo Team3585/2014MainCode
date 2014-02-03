@@ -51,14 +51,9 @@ public class Chassis extends Subsystem {
     }
     
     public static void driveWithJoystick(Joystick driveStick) {
-        getDrive().mecanumDrive_Polar(
-                driveStick.getX(),
+          drive.mecanumDrive_Polar(
                 driveStick.getY(),
-                driveStick.getZ()
-                );
-        drive.mecanumDrive_Polar(
                 driveStick.getX(),
-                driveStick.getY(),
                 driveStick.getZ()
                 );
                 
