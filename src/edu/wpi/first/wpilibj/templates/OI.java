@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.templates.commands.GoalieDown;
 import edu.wpi.first.wpilibj.templates.commands.GoalieUp;
 import edu.wpi.first.wpilibj.templates.commands.LiftDumper;
 import edu.wpi.first.wpilibj.templates.commands.LowerDumper;
+import edu.wpi.first.wpilibj.templates.commands.FireAndWait;
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
@@ -29,6 +30,7 @@ public class OI {
     public static JoystickButton lowerDumperButton = new JoystickButton(stick2,4);
     public static JoystickButton raiseGoalieButton = new JoystickButton(stick2,5);
     public static JoystickButton lowerGoalieButton = new JoystickButton(stick2,6);
+    public static JoystickButton fireAndWaitButton=new JoystickButton(stick2,7);
     public static Goalie goalie = new Goalie();
     public static ForkLift forkLift = new ForkLift();
     public static Dumper dumper = new Dumper();
@@ -48,6 +50,7 @@ public class OI {
         lowerGoalieButton.whenPressed(new GoalieDown());
         raiseDumperButton.whenPressed(new LiftDumper());
         lowerDumperButton.whenPressed(new LowerDumper());
+        fireAndWaitButton.whenPressed(new FireAndWait());       
         
     }
     

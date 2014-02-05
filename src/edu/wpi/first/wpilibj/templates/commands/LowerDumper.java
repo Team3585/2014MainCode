@@ -28,7 +28,7 @@ public class LowerDumper extends CommandBase {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return (OI.dumper.AtLowerStop() || OI.lowerDumperButton.get());
+        return (OI.dumper.AtLowerStop() || !OI.lowerDumperButton.get());
     }
 
     // Called once after isFinished returns true
