@@ -2,17 +2,17 @@
 package edu.wpi.first.wpilibj.templates;
 
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.templates.subsystems.ForkLift;
-import edu.wpi.first.wpilibj.templates.subsystems.Dumper;
-import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-import edu.wpi.first.wpilibj.templates.subsystems.Goalie;
-import edu.wpi.first.wpilibj.templates.commands.UpperForkLift;
-import edu.wpi.first.wpilibj.templates.commands.LowerForkLift;
+import edu.wpi.first.wpilibj.templates.commands.FireAndWait;
 import edu.wpi.first.wpilibj.templates.commands.GoalieDown;
 import edu.wpi.first.wpilibj.templates.commands.GoalieUp;
 import edu.wpi.first.wpilibj.templates.commands.LiftDumper;
 import edu.wpi.first.wpilibj.templates.commands.LowerDumper;
+import edu.wpi.first.wpilibj.templates.commands.LowerForkLift;
+import edu.wpi.first.wpilibj.templates.commands.UpperForkLift;
+import edu.wpi.first.wpilibj.templates.subsystems.Dumper;
+import edu.wpi.first.wpilibj.templates.subsystems.ForkLift;
+import edu.wpi.first.wpilibj.templates.subsystems.Goalie;
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
@@ -23,15 +23,19 @@ public class OI {
     
     private static Joystick driveStick = null;
     public static Joystick stick2 = new Joystick(2);
-    public static JoystickButton raiseForkLiftButton = new JoystickButton(stick2,1);
-    public static JoystickButton lowerForkLiftButton = new JoystickButton(stick2,2);
-    public static JoystickButton raiseDumperButton = new JoystickButton(stick2,3);
-    public static JoystickButton lowerDumperButton = new JoystickButton(stick2,4);
-    public static JoystickButton raiseGoalieButton = new JoystickButton(stick2,5);
-    public static JoystickButton lowerGoalieButton = new JoystickButton(stick2,6);
+    
+    public static JoystickButton raiseForkLiftButton;
+    public static JoystickButton lowerForkLiftButton;
+    public static JoystickButton raiseDumperButton;
+    public static JoystickButton lowerDumperButton;
+    public static JoystickButton raiseGoalieButton;
+    public static JoystickButton lowerGoalieButton;
+    public static JoystickButton fireAndWaitButton;
+    
     public static Goalie goalie = new Goalie();
     public static ForkLift forkLift = new ForkLift();
     public static Dumper dumper = new Dumper();
+    
     public static Joystick getStick() {
         if (driveStick == null) {
             driveStick = new Joystick(JOYSTICK_PORT_1);
@@ -41,14 +45,22 @@ public class OI {
  
     }
     public OI(){
-   
+        
+        raiseForkLiftButton = new JoystickButton(stick2, 1);
+        lowerForkLiftButton = new JoystickButton(stick2, 2);
+        raiseDumperButton   = new JoystickButton(stick2, 3);
+        lowerDumperButton   = new JoystickButton(stick2, 4);
+        raiseGoalieButton   = new JoystickButton(stick2, 5);
+        lowerGoalieButton   = new JoystickButton(stick2, 6);
+        fireAndWaitButton   = new JoystickButton(stick2, 7);
+        
         raiseForkLiftButton.whenPressed(new UpperForkLift());
         lowerForkLiftButton.whenPressed(new LowerForkLift());
         raiseGoalieButton.whenPressed(new GoalieUp());
         lowerGoalieButton.whenPressed(new GoalieDown());
         raiseDumperButton.whenPressed(new LiftDumper());
         lowerDumperButton.whenPressed(new LowerDumper());
-        
+        fireAndWaitButton.whenPressed(new FireAndWait());
     }
     
     //// CREATING BUTTONS

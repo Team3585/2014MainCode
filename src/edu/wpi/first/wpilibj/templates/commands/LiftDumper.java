@@ -5,11 +5,10 @@
 package edu.wpi.first.wpilibj.templates.commands;
 
 import edu.wpi.first.wpilibj.templates.OI;
-import edu.wpi.first.wpilibj.templates.subsystems.Dumper;
 
 /**
  *
- * @author en
+ * @author een
  */
 public class LiftDumper extends CommandBase {
     

@@ -42,7 +42,7 @@ public class Chassis extends Subsystem {
         return drive;
     }
     
-
+ 
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
@@ -51,15 +51,16 @@ public class Chassis extends Subsystem {
     }
     
     public static void driveWithJoystick(Joystick driveStick) {
-        getDrive().mecanumDrive_Polar(
+//          drive.mecanumDrive_Polar(
+//                driveStick.getZ(),
+//                driveStick.getX(),
+//                driveStick.getY()
+//                );
+        drive.mecanumDrive_Cartesian(
                 driveStick.getX(),
+                driveStick.getTwist(),
                 driveStick.getY(),
-                driveStick.getZ()
-                );
-        drive.mecanumDrive_Polar(
-                driveStick.getX(),
-                driveStick.getY(),
-                driveStick.getZ()
+                0
                 );
                 
     }

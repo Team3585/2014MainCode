@@ -20,8 +20,7 @@ public class FireAndWait extends CommandBase {
     private int mode;
     
     public FireAndWait() {
-        // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
+        requires(OI.forkLift);
     }
 
     // Called just before this Command runs the first time
@@ -41,17 +40,17 @@ public class FireAndWait extends CommandBase {
                 } else {
                     OI.forkLift.lowerForkLift(MOTOR_SPEED_DOWN);
                 }
-                    
-            
+                
             break;
             case WAIT_MODE:
                 
-                 if(OI.forkLift.hitByBall())
-                   mode = UP_MODE;
+                 if(OI.forkLift.hitByBall()) {
+                     mode = UP_MODE;
+                 }
                 
-        
             break;
             case UP_MODE:
+                
                 if(OI.forkLift.atUpperStop())
                 {
                     OI.forkLift.forkLiftStop();
@@ -63,17 +62,18 @@ public class FireAndWait extends CommandBase {
                 else {
                     OI.forkLift.liftBall(MOTOR_SPEED_UP);
                 }
-                break;
-                    
                 
+            break;        
         }
     }
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        if(mode==NULL_MODE)
+        if (mode == NULL_MODE) {
             return true;
-        if(OI.forkLift.getMode()==ForkLift.MANUAL)
+        }
+        if (OI.forkLift.getMode() == ForkLift.MANUAL) {
             return true;
+        }
         return false;
     }
 

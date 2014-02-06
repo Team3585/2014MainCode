@@ -47,11 +47,13 @@ public class RobotTemplate extends IterativeRobot {
      * This function is called periodically during operator control
      */
     public void teleopPeriodic() {
-        Scheduler.getInstance().run();
-        
         if (!(isEnabled() && isOperatorControl()))
         {
             teleopDriveCommand.cancel();
+        }
+        else
+        {
+            Scheduler.getInstance().run();
         }
     }
     
