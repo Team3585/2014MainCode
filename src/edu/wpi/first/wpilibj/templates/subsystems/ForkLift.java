@@ -77,7 +77,7 @@ public class ForkLift extends Subsystem {
     
     public boolean hitByBall()
     {
-        return(true);
+        return(ballLimitSwitchOne.get());
     }
     
     public void initDefaultCommand() {
