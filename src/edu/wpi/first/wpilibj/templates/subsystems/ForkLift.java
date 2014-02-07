@@ -7,6 +7,7 @@ package edu.wpi.first.wpilibj.templates.subsystems;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.Victor;
 /**
  *
  * @author Developer
@@ -29,14 +30,14 @@ public class ForkLift extends Subsystem {
     
    
     
-    public static Talon forkMotor;
+    public static Victor forkMotor;
     
     private int mode; 
     public final static int AUTOMATIC = 1;
     public static final int MANUAL = 2;
 
     public ForkLift() {
-        forkMotor = new Talon(MOTOR); 
+        forkMotor = new Victor(MOTOR); 
         
         upperLimitSwitch = new DigitalInput(UPPER_LIMIT_SWITCH);
         lowerLimitSwitch = new DigitalInput(LOWER_LIMIT_SWITCH);

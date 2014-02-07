@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj.templates.OI;
  */
 public class LowerForkLift extends CommandBase {
     
-    public static final float MOTOR_DOWN_SPEED = -.5f;
+    public static final float MOTOR_DOWN_SPEED = -.1f;
     
     public LowerForkLift() {
         super("LowerForkLift");
