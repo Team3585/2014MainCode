@@ -22,7 +22,7 @@ public class OI {
     public static final int JOYSTICK_PORT_1 = 2;
     
     private static Joystick driveStick = null;
-    public static Joystick stick2 = new Joystick(2);
+    public static Joystick stick2 = new Joystick(1);
     
     public static JoystickButton raiseForkLiftButton;
     public static JoystickButton lowerForkLiftButton;

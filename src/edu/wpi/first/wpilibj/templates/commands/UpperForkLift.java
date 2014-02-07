@@ -12,7 +12,7 @@ import edu.wpi.first.wpilibj.templates.OI;
  */
 public class UpperForkLift extends CommandBase {
     
-    public static final float MOTOR_UP_SPEED = .1f;
+    public static final float MOTOR_UP_SPEED = .15f;
 
     
     public UpperForkLift() {
