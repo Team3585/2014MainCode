@@ -9,7 +9,7 @@ import edu.wpi.first.wpilibj.templates.commands.GoalieUp;
 import edu.wpi.first.wpilibj.templates.commands.LiftDumper;
 import edu.wpi.first.wpilibj.templates.commands.LowerDumper;
 import edu.wpi.first.wpilibj.templates.commands.LowerForkLift;
-import edu.wpi.first.wpilibj.templates.commands.UpperForkLift;
+import edu.wpi.first.wpilibj.templates.commands.RaiseForkLift;
 import edu.wpi.first.wpilibj.templates.subsystems.Dumper;
 import edu.wpi.first.wpilibj.templates.subsystems.ForkLift;
 import edu.wpi.first.wpilibj.templates.subsystems.Goalie;
@@ -54,7 +54,7 @@ public class OI {
         lowerGoalieButton   = new JoystickButton(stick2, 6);
         fireAndWaitButton   = new JoystickButton(stick2, 7);
         
-        raiseForkLiftButton.whenPressed(new UpperForkLift());
+        raiseForkLiftButton.whenPressed(new RaiseForkLift());
         lowerForkLiftButton.whenPressed(new LowerForkLift());
         raiseGoalieButton.whenPressed(new GoalieUp());
         lowerGoalieButton.whenPressed(new GoalieDown());

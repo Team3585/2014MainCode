@@ -10,12 +10,12 @@ import edu.wpi.first.wpilibj.templates.OI;
  *
  * @author Developer
  */
-public class UpperForkLift extends CommandBase {
+public class RaiseForkLift extends CommandBase {
     
     public static final float MOTOR_UP_SPEED = .15f;
 
     
-    public UpperForkLift() {
+    public RaiseForkLift() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }
