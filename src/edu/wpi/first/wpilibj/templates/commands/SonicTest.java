@@ -24,8 +24,8 @@ public class SonicTest extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        if (SensorBase.sonic.getRangeInches() < SONIC_RANGE) {
-            System.out.println("Ultrasonic: AtRange:"+SensorBase.sonic.getRangeInches());
+        if (SensorBase.sonic.getVoltage() < SONIC_RANGE) {
+            System.out.println("Ultrasonic: AtRange:"+SensorBase.sonic.getVoltage()*9.766);
         }
     }
 

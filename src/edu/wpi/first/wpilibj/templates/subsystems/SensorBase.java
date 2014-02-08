@@ -7,6 +7,7 @@ package edu.wpi.first.wpilibj.templates.subsystems;
 import edu.wpi.first.wpilibj.Ultrasonic;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.templates.commands.SonicTest;
+import edu.wpi.first.wpilibj.AnalogChannel;
 
 /**
  *
@@ -14,7 +15,7 @@ import edu.wpi.first.wpilibj.templates.commands.SonicTest;
  */
 public class SensorBase extends Subsystem {
     
-public static Ultrasonic sonic = new Ultrasonic(7,6);
+public static AnalogChannel sonic = new AnalogChannel(6);
 
 
 
