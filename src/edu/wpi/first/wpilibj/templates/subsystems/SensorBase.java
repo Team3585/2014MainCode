@@ -6,6 +6,7 @@ package edu.wpi.first.wpilibj.templates.subsystems;
 
 import edu.wpi.first.wpilibj.Ultrasonic;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.templates.commands.SonicTest;
 
 /**
  *
@@ -18,6 +19,7 @@ public static Ultrasonic sonic = new Ultrasonic(7,6);
 
 
     public void initDefaultCommand() {
+        setDefaultCommand(new SonicTest());
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
     }
