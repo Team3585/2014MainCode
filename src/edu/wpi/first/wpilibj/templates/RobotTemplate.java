@@ -15,6 +15,7 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.templates.commands.CommandBase;
 import edu.wpi.first.wpilibj.templates.commands.DriveWithJoystick;
 
+
 /**
  * The VM is configured to automatically run this class, and to call the
  * functions corresponding to each mode, as described in the IterativeRobot
@@ -61,6 +62,7 @@ public class RobotTemplate extends IterativeRobot {
      * This function is called periodically during test mode
      */
     public void testPeriodic() {
+        
         LiveWindow.run();
     }
 }

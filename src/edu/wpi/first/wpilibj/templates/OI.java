@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.templates.commands.RaiseForkLift;
 import edu.wpi.first.wpilibj.templates.subsystems.Dumper;
 import edu.wpi.first.wpilibj.templates.subsystems.ForkLift;
 import edu.wpi.first.wpilibj.templates.subsystems.Goalie;
+import edu.wpi.first.wpilibj.Ultrasonic;
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
@@ -35,6 +36,7 @@ public class OI {
     public static Goalie goalie = new Goalie();
     public static ForkLift forkLift = new ForkLift();
     public static Dumper dumper = new Dumper();
+    
     
     public static Joystick getStick() {
         if (driveStick == null) {
