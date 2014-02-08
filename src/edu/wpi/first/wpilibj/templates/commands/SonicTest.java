@@ -15,8 +15,7 @@ public class SonicTest extends CommandBase {
     
     private static int SONIC_RANGE = 12;
     public SonicTest() {
-        // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
+        
     }
 
     // Called just before this Command runs the first time
