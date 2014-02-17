@@ -12,7 +12,7 @@ import edu.wpi.first.wpilibj.templates.OI;
  */
 public class RaiseForkLift extends CommandBase {
     
-    public static final float MOTOR_UP_SPEED = .15f;
+    public static final float MOTOR_UP_SPEED = 1.0f;
 
     
     public RaiseForkLift() {
@@ -27,11 +27,13 @@ public class RaiseForkLift extends CommandBase {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
        OI.forkLift.liftBall(MOTOR_UP_SPEED);
+       System.out.println("ForkUp");
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
         return (OI.forkLift.atUpperStop() || !OI.raiseForkLiftButton.get());
+   //     return (!OI.raiseForkLiftButton.get());
     }
 
     // Called once after isFinished returns true

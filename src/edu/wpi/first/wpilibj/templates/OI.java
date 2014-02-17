@@ -14,6 +14,7 @@ import edu.wpi.first.wpilibj.templates.subsystems.Dumper;
 import edu.wpi.first.wpilibj.templates.subsystems.ForkLift;
 import edu.wpi.first.wpilibj.templates.subsystems.Goalie;
 import edu.wpi.first.wpilibj.Ultrasonic;
+import edu.wpi.first.wpilibj.templates.commands.SonicTest;
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
@@ -50,11 +51,11 @@ public class OI {
         
         raiseForkLiftButton = new JoystickButton(stick2, 1);
         lowerForkLiftButton = new JoystickButton(stick2, 2);
-        raiseDumperButton   = new JoystickButton(stick2, 3);
-        lowerDumperButton   = new JoystickButton(stick2, 4);
-        raiseGoalieButton   = new JoystickButton(stick2, 5);
-        lowerGoalieButton   = new JoystickButton(stick2, 6);
-        fireAndWaitButton   = new JoystickButton(stick2, 7);
+        raiseDumperButton   = new JoystickButton(stick2, 5);
+        lowerDumperButton   = new JoystickButton(stick2, 6);
+        raiseGoalieButton   = new JoystickButton(stick2, 7);
+        lowerGoalieButton   = new JoystickButton(stick2, 8);
+        fireAndWaitButton   = new JoystickButton(stick2, 4);
         
         raiseForkLiftButton.whenPressed(new RaiseForkLift());
         lowerForkLiftButton.whenPressed(new LowerForkLift());

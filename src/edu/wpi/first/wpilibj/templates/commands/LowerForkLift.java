@@ -11,10 +11,10 @@ import edu.wpi.first.wpilibj.templates.OI;
  */
 public class LowerForkLift extends CommandBase {
     
-    public static final float MOTOR_DOWN_SPEED = -.4f;
+    public static final float MOTOR_DOWN_SPEED = -.2f;
     
     public LowerForkLift() {
-        super("LowerForkLift");
+        
         // Use requires() here to declare subsystem dependencies
    //     requires(OI.forkLift);
     }
@@ -26,6 +26,7 @@ public class LowerForkLift extends CommandBase {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
         OI.forkLift.lowerForkLift(MOTOR_DOWN_SPEED);
+        System.out.println("ForkDown");
     }
 
     // Make this return true when this Command no longer needs to run execute()

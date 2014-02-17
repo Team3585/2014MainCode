@@ -24,11 +24,13 @@ public class LowerDumper extends CommandBase {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
         OI.dumper.DumperDown();
+        System.out.println("DumperDown");
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return (OI.dumper.AtLowerStop() || !OI.lowerDumperButton.get());
+        return (!OI.dumper.AtLowerStop() || !OI.lowerDumperButton.get());
+        //return (!OI.lowerDumperButton.get());
     }
 
     // Called once after isFinished returns true

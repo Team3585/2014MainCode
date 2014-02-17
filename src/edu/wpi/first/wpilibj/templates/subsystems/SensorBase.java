@@ -15,7 +15,7 @@ import edu.wpi.first.wpilibj.AnalogChannel;
  */
 public class SensorBase extends Subsystem {
     
-public static AnalogChannel sonic = new AnalogChannel(6);
+public static AnalogChannel sonic = new AnalogChannel(1);
 
 
 

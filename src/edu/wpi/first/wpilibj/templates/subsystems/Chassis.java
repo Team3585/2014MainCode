@@ -58,8 +58,8 @@ public class Chassis extends Subsystem {
 //                );
         drive.mecanumDrive_Cartesian(
                 driveStick.getX(),
-                driveStick.getY(),
                 driveStick.getZ(),
+                driveStick.getY(),
                 0
                 );
                 

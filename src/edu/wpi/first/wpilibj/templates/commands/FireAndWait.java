@@ -11,8 +11,8 @@ import edu.wpi.first.wpilibj.templates.subsystems.ForkLift;
  * @author en
  */
 public class FireAndWait extends CommandBase {
-    public static final float MOTOR_SPEED_DOWN = -.4f;
-    public static final float MOTOR_SPEED_UP = .15f;
+    public static final float MOTOR_SPEED_DOWN = -.7f;
+    public static final float MOTOR_SPEED_UP = 1.0f;
     private final int DOWN_MODE = 1;
     private final int WAIT_MODE = 2;
     private final int UP_MODE = 3;
@@ -77,7 +77,7 @@ public class FireAndWait extends CommandBase {
         if (OI.forkLift.getMode() == ForkLift.MANUAL) {
             return true;
         }
-        return OI.stick2.getRawButton(8);
+        return OI.stick2.getRawButton(3);
     }
 
     // Called once after isFinished returns true

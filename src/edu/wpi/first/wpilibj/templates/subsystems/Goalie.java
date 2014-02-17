@@ -15,8 +15,8 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class Goalie extends Subsystem {
     public static final float MOTOR_SPEED = 1.0f;
     public static final int GOAL_MOTOR = 6;
-    public static final int LOWER_LIMIT_SWITCH = 5;
-    public static final int UPPER_LIMIT_SWITCH = 6;
+    public static final int LOWER_LIMIT_SWITCH = 13;
+    public static final int UPPER_LIMIT_SWITCH = 14;
     
     public static DigitalInput goalUpLimitSwitch;
     public static  DigitalInput goalDownLimitSwitch;
