@@ -23,7 +23,7 @@ public class OI {
 
     public static final int JOYSTICK_PORT_1 = 2;
     
-    private static Joystick driveStick = null;
+    public static Joystick driveStick = null;
     public static Joystick stick2 = new Joystick(1);
     
     public static JoystickButton raiseForkLiftButton;
@@ -33,6 +33,7 @@ public class OI {
     public static JoystickButton raiseGoalieButton;
     public static JoystickButton lowerGoalieButton;
     public static JoystickButton fireAndWaitButton;
+    public static JoystickButton sonicButton;
     
     public static Goalie goalie = new Goalie();
     public static ForkLift forkLift = new ForkLift();
@@ -56,6 +57,7 @@ public class OI {
         raiseGoalieButton   = new JoystickButton(stick2, 7);
         lowerGoalieButton   = new JoystickButton(stick2, 8);
         fireAndWaitButton   = new JoystickButton(stick2, 4);
+        sonicButton         = new JoystickButton(driveStick, 1);
         
         raiseForkLiftButton.whenPressed(new RaiseForkLift());
         lowerForkLiftButton.whenPressed(new LowerForkLift());
@@ -64,6 +66,7 @@ public class OI {
         raiseDumperButton.whenPressed(new LiftDumper());
         lowerDumperButton.whenPressed(new LowerDumper());
         fireAndWaitButton.whenPressed(new FireAndWait());
+        sonicButton.whenPressed(new SonicTest());
     }
     
     //// CREATING BUTTONS

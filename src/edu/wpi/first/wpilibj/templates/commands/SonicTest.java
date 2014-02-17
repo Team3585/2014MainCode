@@ -31,7 +31,7 @@ public class SonicTest extends CommandBase {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return OI.stick2.getRawButton(4);
+        return !OI.driveStick.getRawButton(1);
     }
 
     // Called once after isFinished returns true

@@ -30,7 +30,7 @@ public class Chassis extends Subsystem {
  //   public static Victor victor6 = new Victor(VICTOR_PORT_6);    
  //   public static Victor victor7 = new Victor(VICTOR_PORT_7);    
  //   public static Victor victor8 = new Victor(VICTOR_PORT_8);
-    private static RobotDrive drive = new RobotDrive(victor1, victor2, victor3, victor4);
+    public static RobotDrive drive = new RobotDrive(victor1, victor2, victor3, victor4);
    // public static RobotDrive drive2 = new RobotDrive(victor1, victor2, victor3, victor4);
 
     

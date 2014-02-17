@@ -30,14 +30,14 @@ public class ForkLift extends Subsystem {
     
    
     
-    public static Victor forkMotor;
+    public static Talon forkMotor;
     
     private int mode; 
     public final static int AUTOMATIC = 1;
     public static final int MANUAL = 2;
 
     public ForkLift() {
-        forkMotor = new Victor(MOTOR); 
+        forkMotor = new Talon(MOTOR); 
         
         upperLimitSwitch = new DigitalInput(UPPER_LIMIT_SWITCH);
         lowerLimitSwitch = new DigitalInput(LOWER_LIMIT_SWITCH);

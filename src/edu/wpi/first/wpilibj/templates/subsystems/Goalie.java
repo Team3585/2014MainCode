@@ -6,6 +6,7 @@ package edu.wpi.first.wpilibj.templates.subsystems;
 
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Talon;
+import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -21,11 +22,11 @@ public class Goalie extends Subsystem {
     public static DigitalInput goalUpLimitSwitch;
     public static  DigitalInput goalDownLimitSwitch;
     
-    public static Talon goalieMotor;
+    public static Victor goalieMotor;
     
     public Goalie(){
            
-        goalieMotor = new Talon(GOAL_MOTOR); 
+        goalieMotor = new Victor(GOAL_MOTOR); 
         
         goalUpLimitSwitch = new DigitalInput(UPPER_LIMIT_SWITCH);
         goalDownLimitSwitch = new DigitalInput(LOWER_LIMIT_SWITCH);
