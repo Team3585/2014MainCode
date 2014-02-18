@@ -15,6 +15,8 @@ import edu.wpi.first.wpilibj.templates.subsystems.ForkLift;
 import edu.wpi.first.wpilibj.templates.subsystems.Goalie;
 import edu.wpi.first.wpilibj.Ultrasonic;
 import edu.wpi.first.wpilibj.templates.commands.SonicTest;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.templates.subsystems.SensorBase;
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
@@ -49,7 +51,7 @@ public class OI {
  
     }
     public OI(){
-        
+              
         raiseForkLiftButton = new JoystickButton(stick2, 1);
         lowerForkLiftButton = new JoystickButton(stick2, 2);
         raiseDumperButton   = new JoystickButton(stick2, 5);
@@ -67,6 +69,9 @@ public class OI {
         lowerDumperButton.whenPressed(new LowerDumper());
         fireAndWaitButton.whenPressed(new FireAndWait());
         sonicButton.whenPressed(new SonicTest());
+        SmartDashboard.putNumber("Ultrasonic Value:", SensorBase.sonic.getVoltage()/9.766);
+        
+        
     }
     
     //// CREATING BUTTONS
