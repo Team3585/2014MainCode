@@ -24,14 +24,14 @@ public class SonicTest extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        if (SensorBase.sonic.getVoltage() < SONIC_RANGE) {
-            System.out.println("Ultrasonic: AtRange:"+SensorBase.sonic.getVoltage()*9.766);
-        }
+    //    if (SensorBase.sonic.getVoltage() < SONIC_RANGE) {
+            System.out.println("Ultrasonic: AtRange:"+SensorBase.sonic.getVoltage()/9.766);
+     //   }
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return !OI.driveStick.getRawButton(1);
+        return /*!OI.driveStick.getRawButton(1)*/ false;
     }
 
     // Called once after isFinished returns true
