@@ -57,7 +57,7 @@ public class OI {
         raiseGoalieButton   = new JoystickButton(stick2, 7);
         lowerGoalieButton   = new JoystickButton(stick2, 8);
         fireAndWaitButton   = new JoystickButton(stick2, 4);
-        sonicButton         = new JoystickButton(driveStick, 1);
+        sonicButton         = new JoystickButton(getStick(), 1);
         
         raiseForkLiftButton.whenPressed(new RaiseForkLift());
         lowerForkLiftButton.whenPressed(new LowerForkLift());
