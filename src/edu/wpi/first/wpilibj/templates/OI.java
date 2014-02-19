@@ -28,6 +28,8 @@ public class OI {
     public static Joystick driveStick = null;
     public static Joystick stick2 = new Joystick(1);
     
+    public static Hole joyThresh;
+    
     public static JoystickButton raiseForkLiftButton;
     public static JoystickButton lowerForkLiftButton;
     public static JoystickButton raiseDumperButton;
@@ -59,8 +61,9 @@ public class OI {
         raiseGoalieButton   = new JoystickButton(stick2, 7);
         lowerGoalieButton   = new JoystickButton(stick2, 8);
         fireAndWaitButton   = new JoystickButton(stick2, 4);
-        sonicButton         = new JoystickButton(getStick(), 1);
+        sonicButton         = new JoystickButton(stick2, 10);
         
+        joyThresh           = new Hole(driveStick, 1,1,1,1);
         raiseForkLiftButton.whenPressed(new RaiseForkLift());
         lowerForkLiftButton.whenPressed(new LowerForkLift());
         raiseGoalieButton.whenPressed(new GoalieUp());

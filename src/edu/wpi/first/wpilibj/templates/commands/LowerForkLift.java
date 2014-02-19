@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj.templates.OI;
  */
 public class LowerForkLift extends CommandBase {
     
-    public static final float MOTOR_DOWN_SPEED = -.2f;
+    public static final float MOTOR_DOWN_SPEED = -.7f;
     
     public LowerForkLift() {
         
@@ -31,7 +31,7 @@ public class LowerForkLift extends CommandBase {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return(OI.forkLift.atLowerStop() || !OI.lowerForkLiftButton.get());
+        return(/*OI.forkLift.atLowerStop() ||*/ !OI.lowerForkLiftButton.get());
     }
 
     // Called once after isFinished returns true

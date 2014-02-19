@@ -4,6 +4,7 @@
  */
 package edu.wpi.first.wpilibj.templates.commands;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.templates.OI;
 import edu.wpi.first.wpilibj.templates.subsystems.SensorBase;
 
@@ -26,6 +27,7 @@ public class SonicTest extends CommandBase {
     protected void execute() {
     //    if (SensorBase.sonic.getVoltage() < SONIC_RANGE) {
             System.out.println("Ultrasonic: AtRange:"+SensorBase.sonic.getVoltage()/9.766);
+            SmartDashboard.putNumber("Ultrasonic Value:", SensorBase.sonic.getVoltage()/9.766);
      //   }
     }
 
