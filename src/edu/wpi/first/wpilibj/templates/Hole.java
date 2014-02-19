@@ -56,7 +56,7 @@ public class Hole {
      */
     private double limitValue(double value, double threshold)
     {
-        if (value >= threshold)
+        if (value >= threshold || -value >= threshold)
         {
             return value;
         }

@@ -4,6 +4,7 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.templates.OI;
 import edu.wpi.first.wpilibj.templates.commands.DriveWithJoystick;
 
 /**
@@ -57,9 +58,9 @@ public class Chassis extends Subsystem {
 //                driveStick.getY()
 //                );
         drive.mecanumDrive_Cartesian(
-                driveStick.getX(),
-                driveStick.getZ(),
-                driveStick.getY(),
+                OI.joyThresh.getX(),
+                OI.joyThresh.getZ(),
+                OI.joyThresh.getY(),
                 0
                 );
                 
