@@ -16,6 +16,7 @@ import edu.wpi.first.wpilibj.templates.subsystems.Goalie;
 import edu.wpi.first.wpilibj.Ultrasonic;
 import edu.wpi.first.wpilibj.templates.commands.SonicTest;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.templates.subsystems.Chassis;
 import edu.wpi.first.wpilibj.templates.subsystems.SensorBase;
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -73,8 +74,16 @@ public class OI {
         fireAndWaitButton.whenPressed(new FireAndWait());
         sonicButton.whenPressed(new SonicTest());
         SmartDashboard.putNumber("Ultrasonic Value:", SensorBase.sonic.getVoltage()/9.766);
-        
-        
+        SmartDashboard.putBoolean("GoalieDown:", OI.goalie.atGoalieDownStop());
+        SmartDashboard.putBoolean("GoalieUp:", OI.goalie.atGoalieUpStop());
+        SmartDashboard.getBoolean("ForkUp", OI.forkLift.atUpperStop());
+        SmartDashboard.getBoolean("ForkDown", OI.forkLift.atLowerStop());
+        SmartDashboard.getBoolean("DumperUp", OI.dumper.AtUpperStop());
+        SmartDashboard.getBoolean("DumperDown", OI.dumper.AtLowerStop());
+        SmartDashboard.getNumber("DriveOutput1", Chassis.victor1.getSpeed());
+        SmartDashboard.getNumber("DriveOutput2", Chassis.victor2.getSpeed());
+        SmartDashboard.getNumber("DriveOutput3", Chassis.victor3.getSpeed());
+        SmartDashboard.getNumber("DriveOutput4", Chassis.victor4.getSpeed());
     }
     
     //// CREATING BUTTONS

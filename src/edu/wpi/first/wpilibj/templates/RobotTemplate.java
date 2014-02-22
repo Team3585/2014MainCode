@@ -14,6 +14,8 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.templates.commands.CommandBase;
 import edu.wpi.first.wpilibj.templates.commands.DriveWithJoystick;
+import edu.wpi.first.wpilibj.Timer;
+import edu.wpi.first.wpilibj.templates.subsystems.Chassis;
 
 
 /**
@@ -65,4 +67,17 @@ public class RobotTemplate extends IterativeRobot {
         
         LiveWindow.run();
     }
+
+    public void autonomousInit() {
+     /*   
+        Chassis.drive.drive(.5,0);
+        Timer.delay(4);
+        Chassis.drive.drive(0,0);
+        Timer.delay(1);
+        OI.dumper.DumperDown();
+        Timer.delay(5);
+        Chassis.drive.drive(-.5,0);
+      */
+  }
+  
 }
